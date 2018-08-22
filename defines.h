@@ -1,0 +1,86 @@
+#ifndef DEFINES_H
+#define DEFINES_H
+
+#define BASEVALUE 11000
+
+#define IDLE 0
+#define MANUALACQUIRE 1
+#define AUTOACQUIRE 2
+#define WAVECAL 3
+#define BBCOLD 4
+#define BBHOT 5
+#define BBEXT 6
+
+#define TESTPATTERN320X240 0
+#define TESTPATTERN640X512 1
+#define MC320 2
+#define TAU640 3
+#define PV640 4
+#define PHOTON 5
+#define INO 6
+
+#define PADDLEON 1
+#define PADDLEOFF 0
+#define POWERON 1
+#define POWEROFF 0
+
+#define PADDLEPOSITIONCOLD 0
+#define PADDLEPOSITIONHOT 1
+#define PADDLEPOSITIONAMBIENT 2
+#define ROTORPOSITION 3
+#define PADDLETEMPERATURECOLD 4
+#define PADDLETEMPERATUREHOT 5
+#define ROTORTEMPERATURECOLD 6
+#define ROTORTEMPERATUREHOT 7
+#define PADDLEPOWERCOLD 8
+#define PADDLEPOWERHOT 9
+#define ROTORPOWERCOLD 10
+#define ROTORPOWERHOT 11
+
+#define ROTORPASS 0
+#define ROTORCOLD 1
+#define ROTORHOT 2
+#define ROTORAMBIENT 3
+
+
+//#define CAMCOLDTASK 1
+//#define CAMHOTTASK 2
+//#define CAMOTHERTASK 3
+/*#define INTCOLDTASK 4
+#define INTHOTTASK 5
+#define INTOTHERTASK 6
+#define WAVECALTASK 7
+#define SCANTASK 8*/
+
+//#define IDLETASK 0
+//#define COLDBBTASK 1
+//#define HOTBBTASK 2
+//#define WAVECALTASK 3
+//#define SCANTASK 4
+//#define STARETASK 5
+//#define PROCESSINGTASK 6
+
+//#define CHANGEOFSTATETASK 9
+//#define SCANALIGNMENTBUFFERWIDTH 14
+#define SCANALIGNMENTBUFFERWIDTH 0
+
+//#define IMAGEWIDTH 320L
+//#define IMAGEHEIGHT 240L
+//#define IMAGESIZE 76800L
+
+//#define IMAGEWIDTH 320L
+//#define IMAGEHEIGHT 256L
+//#define IMAGESIZE 81920L
+
+#define MAXIMAGESIZE 327680L
+
+#define uInt32 unsigned int
+#define Int32 int
+#define uInt16 unsigned short
+#define Int16 short
+
+
+#define MinFocusPos 3000
+#define MaxFocusPos 17000
+
+#endif // DEFINES_H

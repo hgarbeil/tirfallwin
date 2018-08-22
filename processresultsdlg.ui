@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProcessResultsDlg</class>
+ <widget class="QDialog" name="ProcessResultsDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1131</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TIRCIS - PROCESSOR</string>
+  </property>
+  <widget class="QTabWidget" name="MainTabWidget">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>10</y>
+     <width>871</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="imageTab">
+    <attribute name="title">
+     <string>Input Images</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>691</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Blackbodies</string>
+     </property>
+     <widget class="ImWidget" name="coldBBWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>321</width>
+        <height>261</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="ImWidget" name="hotBBWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>20</y>
+        <width>321</width>
+        <height>261</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>691</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Scan File</string>
+     </property>
+     <widget class="ImWidget" name="scanImWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>321</width>
+        <height>261</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="curFrameLabel">
+      <property name="geometry">
+       <rect>
+        <x>461</x>
+        <y>30</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>30</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Display Frame :</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>351</x>
+        <y>60</y>
+        <width>331</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="frameSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="nFramesLabel">
+         <property name="text">
+          <string>9999</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="wave_tab">
+    <attribute name="title">
+     <string>Wavelengths</string>
+    </attribute>
+    <widget class="MyProfilePlot" name="wavePlotWidget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>621</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="waveplotCB">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>20</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Pixel vs. wavelength</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Pixel vs. wavenumber</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="resamp_tab">
+    <attribute name="title">
+     <string>Resample</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>391</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Column to display</string>
+     </property>
+     <widget class="QLabel" name="stack_column_label">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>60</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>320</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>391</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider">
+         <property name="maximum">
+          <number>640</number>
+         </property>
+         <property name="value">
+          <number>320</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>640</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>421</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>false</bool>
+     </property>
+     <widget class="ImWidget" name="resampDispWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>480</width>
+        <height>617</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="MyProfilePlot" name="offsetsPlot" native="true">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>380</y>
+       <width>421</width>
+       <height>251</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="MyProfilePlot" name="interferogramPlot" native="true">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>100</y>
+       <width>421</width>
+       <height>221</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="FrameCB">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>340</y>
+       <width>211</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Y Offsets vs. Frame</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>X Offsets vs. Frame</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="radtab">
+    <attribute name="title">
+     <string>Radiance</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>331</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>false</bool>
+     </property>
+     <widget class="ImWidget" name="radianceImWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>327</width>
+        <height>497</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="MyProfilePlot" name="radiancePlot" native="true">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>60</y>
+       <width>511</width>
+       <height>241</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="MyProfilePlot" name="emissivityPlot" native="true">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>310</y>
+       <width>511</width>
+       <height>241</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>20</y>
+       <width>101</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Display Band :</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="displayBandCB">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>20</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Temperature and Emissivity</string>
+    </attribute>
+    <widget class="QScrollArea" name="scrollArea_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>311</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>false</bool>
+     </property>
+     <widget class="ImWidget" name="emissImWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>327</width>
+        <height>617</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="MyProfilePlot" name="emissivityPlot_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>150</y>
+       <width>521</width>
+       <height>321</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>10</y>
+       <width>511</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Display</string>
+     </property>
+     <widget class="QRadioButton" name="emissRadButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Emissivity</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>20</y>
+        <width>121</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Temperature</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="displayEmissBandCB">
+      <property name="geometry">
+       <rect>
+        <x>344</x>
+        <y>20</y>
+        <width>171</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>24</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Band :</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>70</y>
+       <width>531</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Display Scaling</string>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>501</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="updateEmissButton">
+         <property name="text">
+          <string>Update</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Minimum : </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="emissMinLE"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Maximum :</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="emissMaxLE"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>231</width>
+     <height>282</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Progress</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="proc_wl">
+      <property name="text">
+       <string>Wavelength Determination</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proc_BB">
+      <property name="text">
+       <string>BlackBodies</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proc_scan">
+      <property name="text">
+       <string>Load Scan Image</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proc_offsets">
+      <property name="text">
+       <string>Offsets</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proc_resamp">
+      <property name="text">
+       <string>Resampling</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proc_rad">
+      <property name="text">
+       <string>Calculating Radiance</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proc_emiss">
+      <property name="text">
+       <string>Calculating Emissivity</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>620</y>
+     <width>211</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyProfilePlot</class>
+   <extends>QWidget</extends>
+   <header>myprofileplot.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ImWidget</class>
+   <extends>QWidget</extends>
+   <header>imwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
